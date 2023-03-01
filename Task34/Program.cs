@@ -4,9 +4,12 @@
 //[345, 897, 568, 234] -> 2
 
 Console.Clear();
-int[] startArray = GetArray(4, 100 , 999);
+        Console.WriteLine("Введите количество элементов в массиве");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+int[] startArray = GetArray(size, 100 , 1000);
 Console.WriteLine(String.Join(" ", startArray));
-Console.WriteLine($"Количество четных элементов в массиве [100; 1000] = {GetCountElements(startArray, 100, 1000)}");
+Console.WriteLine($"Количество четных элементов в массиве = {GetCountElements(startArray, 100, 1000)}");
 
 int[] GetArray(int size, int minValue, int maxValue)
 {
@@ -24,7 +27,7 @@ int GetCountElements(int[] array, int leftRange, int rigthRange)
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-    if (array[i] % 2 == 0) count++;
+    if (array[i] % 2 == 0) count ++;
     }
     return count;
 }
